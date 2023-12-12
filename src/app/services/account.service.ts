@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { CustomHttpClient } from "./custom-http-client.service";
 import { api } from "../constant/const";
 import { AccountView } from "../model/AccountView.model";
+import { environment } from "src/environments/environment";
 
 @Injectable({
     'providedIn' : 'root'
@@ -18,16 +19,16 @@ export class AccountService
     {
 
         console.log(accountData);
-        return this._customHttpClient.post(api+"Account",accountData);
+        return this._customHttpClient.post(environment.api+"Account",accountData);
 
 
     }
     public getInformationById(id:number): Observable<any>
     {
-        return this._customHttpClient.get(api+"information/?customerId="+id);
+        return this._customHttpClient.get(environment.api+"information/?customerId="+id);
     }
     public getAllCustomers(): Observable<any>
     {
-        return this._customHttpClient.get(api+"Customer/getAllCustomers");
+        return this._customHttpClient.get(environment.api+"Customer/getAllCustomers");
     }
 }
