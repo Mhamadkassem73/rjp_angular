@@ -1,0 +1,23 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<div class="flex flex-rows">
+    <div class="m-6 w-full">
+        <app-open-account (changeDropDown)="fetchAccountInfoFunction($event)"></app-open-account>
+
+
+    </div>
+
+    <div class="bg-blue-200 p-4 m-6 w-full">
+        <ng-container *ngIf="informations">
+            <p><span class="text-2xl">Informations : </span><span class="text-lg">{{ informations.name }} {{
+                    informations.surname }}</span></p>
+            <p><span class="text-2xl">Balance: </span><span class="text-lg">{{ informations.balance }}</span></p>
+            <p><span class="text-2xl">Transactions:</span></p>
+            <ul>
+                <li *ngFor="let transaction of informations.transactions">
+                    Transaction ID: {{ transaction.id }} | Amount: {{ transaction.amount }}
+                </li>
+            </ul>
+        </ng-container>
+    </div>
+</div>

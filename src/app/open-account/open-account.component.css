@@ -1,0 +1,10 @@
+/* CSS */
+::ng-deep .mat-select-panel {
+    position: absolute !important;
+    top: calc(100% + 10px); /* Adjust the distance from the border as needed */
+    z-index: 9999; /* Adjust the z-index if necessary */
+    width: calc(100% - 8px); /* Adjust the width as needed */
+    border: 1px solid #ccc; /* Add border for the dropdown panel */
+    border-top: none; /* Remove the top border to merge with the border of the main div */
+  }
+  
